@@ -1,0 +1,58 @@
+{
+  "name": "timezone-select",
+  "version": "1.0.0",
+  "description": "Timezone data source from Wikipedia",
+  "main": "lib/index.js",
+  "scripts": {
+    "build": "webpack",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vixnguyen/timezone-select.git"
+  },
+  "keywords": [
+    "timezone",
+    "list",
+    "official"
+  ],
+  "peerDependencies": {
+    "react": "^16.10.2",
+    "react-dom": "^16.10.2"
+  },
+  "dependencies": {
+    "crawler": "^1.3.0",
+    "react-select": "^3.1.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.10.5",
+    "@babel/core": "^7.11.0",
+    "@babel/plugin-proposal-class-properties": "^7.10.4",
+    "@babel/preset-env": "^7.11.0",
+    "@babel/preset-react": "^7.10.4",
+    "babel-loader": "^8.1.0",
+    "css-loader": "^3.6.0",
+    "gh-pages": "^2.2.0",
+    "html-webpack-plugin": "^3.2.0",
+    "prettier": "^2.0.5",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "style-loader": "^1.2.1",
+    "webpack": "^4.44.1",
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.11.0"
+  },
+  "prettier": {
+    "singleQuote": true,
+    "trailingComma": "es5",
+    "semi": false,
+    "jsxSingleQuote": true,
+    "arrowParens": "avoid"
+  },
+  "author": "Vix Nguyen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vixnguyen/timezone-select/issues"
+  },
+  "homepage": "https://github.com/vixnguyen/timezone-select#readme"
+}
