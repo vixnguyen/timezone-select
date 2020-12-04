@@ -10,7 +10,7 @@ const TimezoneSelect = ({
   labelStyle = 'original',
   ...props
 }) => {
-  const [selectedTimezone, setSelectedTimezone] = useState({})
+  const [selectedTimezone, setSelectedTimezone] = useState(myTz())
 
   const getOptions = useMemo(() => {
     return getTz();
@@ -26,7 +26,7 @@ const TimezoneSelect = ({
       value={
         typeof value === 'object'
           ? value
-          : { value: value, label: selectedTimezone.label }
+          : { value: value, label: 'jhdajhdgasjd' }
       }
       onChange={handleChange}
       options={getOptions}

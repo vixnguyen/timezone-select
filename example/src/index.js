@@ -17,13 +17,13 @@ const App = () => {
         <h2>react-timezone-select</h2>
         <p>
           <a
-            href='https://ndo.dev'
-            alt='ndom91 homepage'
+            href='https://vixnguyen.medium.com/'
+            alt='Vix Nguyen on Medium'
             target='_blank'
             rel='noopener noreferrer'
             className='author'
           >
-            ndom91
+            Vix Nguyen
           </a>
         </p>
       </div>
@@ -81,19 +81,23 @@ const App = () => {
       <div className='code'>
         <span style={{ fontWeight: '500' }}>{'{'}</span> <br />
         <span style={{ marginLeft: '20px', fontWeight: '500' }}>
-          value: '{selectedTimezone.value}'
+          Value: '{selectedTimezone.value}'
         </span>
         <br />
         <span style={{ marginLeft: '20px', fontWeight: '500' }}>
-          label: '{selectedTimezone.label}'
+          Label: '{selectedTimezone.label}'
         </span>
         <br />
         <span style={{ marginLeft: '20px', fontWeight: '500' }}>
-          altName: '{selectedTimezone.altName}'
+          Country: '{selectedTimezone.country}'
         </span>
         <br />
         <span style={{ marginLeft: '20px', fontWeight: '500' }}>
-          abbrev: '{selectedTimezone.abbrev}'
+          Offset: '{selectedTimezone.offset}'
+        </span>
+        <br />
+        <span style={{ marginLeft: '20px', fontWeight: '500' }}>
+          Included: '{selectedTimezone.included}'
         </span>
         <br />
         {'}'}

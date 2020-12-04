@@ -4,6 +4,7 @@
   "description": "Timezone data source from Wikipedia",
   "main": "lib/index.js",
   "scripts": {
+    "start": "webpack-dev-server --mode development",
     "build": "webpack",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -16,6 +17,10 @@
     "list",
     "official"
   ],
+  "bugs": {
+    "url": "https://github.com/vixnguyen/timezone-select/issues"
+  },
+  "homepage": "https://github.com/vixnguyen/timezone-select#readme",
   "peerDependencies": {
     "react": "^16.10.2",
     "react-dom": "^16.10.2"
@@ -50,9 +55,5 @@
     "arrowParens": "avoid"
   },
   "author": "Vix Nguyen",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/vixnguyen/timezone-select/issues"
-  },
-  "homepage": "https://github.com/vixnguyen/timezone-select#readme"
+  "license": "ISC"
 }
