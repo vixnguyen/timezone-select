@@ -10,16 +10,14 @@ const TimezoneSelect = ({
   labelStyle = 'original',
   ...props
 }) => {
-  const [selectedTimezone, setSelectedTimezone] = useState({})
 
   const getOptions = useMemo(() => {
     return getTz();
-  }, [labelStyle])
+  }, [labelStyle]);
 
   const handleChange = tz => {
-    setSelectedTimezone(tz)
-    onChange && onChange(tz)
-  }
+    onChange && onChange(tz);
+  };
 
   const constructTz = (data) => {
     const tz = typeof data === 'string' ? findTzByName(data, getOptions) : data;

@@ -52,28 +52,32 @@ const App = () => {
           onBlur={() => console.log('Blur!')}
         />
       </div>
-      <h3>Return Value:</h3>
-      <div className='code'>
-        <span style={{ marginLeft: '20px', fontWeight: '500' }}>
-          Value: '{selectedTimezone.value}'
-        </span>
-        <br />
-        <span style={{ marginLeft: '20px', fontWeight: '500' }}>
-          Label: '{selectedTimezone.label}'
-        </span>
-        <br />
-        <span style={{ marginLeft: '20px', fontWeight: '500' }}>
-          Country: '{selectedTimezone.country}'
-        </span>
-        <br />
-        <span style={{ marginLeft: '20px', fontWeight: '500' }}>
-          Offset: '{selectedTimezone.offset}'
-        </span>
-        <br />
-        <span style={{ marginLeft: '20px', fontWeight: '500' }}>
-          Included: '{selectedTimezone.included ? selectedTimezone.included.join(', ') : ''}'
-        </span>
-      </div>
+      {
+        selectedTimezone?.value && <>
+          <h3>Return Value:</h3>
+          <div className='code'>
+            <span style={{ marginLeft: '20px', fontWeight: '500' }}>
+              Value: '{selectedTimezone.value}'
+            </span>
+            <br />
+            <span style={{ marginLeft: '20px', fontWeight: '500' }}>
+              Label: '{selectedTimezone.label}'
+            </span>
+            <br />
+            <span style={{ marginLeft: '20px', fontWeight: '500' }}>
+              Country: '{selectedTimezone.country}'
+            </span>
+            <br />
+            <span style={{ marginLeft: '20px', fontWeight: '500' }}>
+              Offset: '{selectedTimezone.offset}'
+            </span>
+            <br />
+            <span style={{ marginLeft: '20px', fontWeight: '500' }}>
+              Included: '{selectedTimezone.included ? selectedTimezone.included.join(', ') : ''}'
+            </span>
+          </div>
+        </>
+      }
     </div>
   )
 }
