@@ -2,9 +2,13 @@ import { TIMEZONES } from './tz.data';
 
 const tzRawData = TIMEZONES;
 
-const findTzByKey = (name) => {
-  return TIMEZONES.find(item => item.name === name);
+const findTzByKey = (key) => {
+  return TIMEZONES.find(item => item.name === key);
 };
+
+const findTzByName = (name, list) => {
+  return list.find(item => item.included && item.included.includes(name));
+}
 
 const newTzItem = ({ data, displayName, offset }) => {
   return {
@@ -76,4 +80,4 @@ const getTz = () => {
   });
 };
 
-export { getTz, myTz, tzRawData };
+export { getTz, myTz, tzRawData, findTzByName };

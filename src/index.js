@@ -1,7 +1,7 @@
 
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useCallback } from 'react';
 import Select from 'react-select';
-import { getTz, myTz } from './tz.helper';
+import { getTz, myTz, findTzByName } from './tz.helper';
 
 const TimezoneSelect = ({
   value,
@@ -10,7 +10,7 @@ const TimezoneSelect = ({
   labelStyle = 'original',
   ...props
 }) => {
-  const [selectedTimezone, setSelectedTimezone] = useState(myTz())
+  const [selectedTimezone, setSelectedTimezone] = useState({})
 
   const getOptions = useMemo(() => {
     return getTz();
@@ -21,13 +21,14 @@ const TimezoneSelect = ({
     onChange && onChange(tz)
   }
 
+  const constructTz = (data) => {
+    const tz = typeof data === 'string' ? findTzByName(data, getOptions) : data;
+    return tz;
+  };
+
   return (
     <Select
-      value={
-        typeof value === 'object'
-          ? value
-          : { value: value, label: 'jhdajhdgasjd' }
-      }
+      value={constructTz(value)}
       onChange={handleChange}
       options={getOptions}
       onBlur={onBlur}
@@ -36,4 +37,5 @@ const TimezoneSelect = ({
   )
 }
 
-export default TimezoneSelect
+export default TimezoneSelect;
+export { myTz };

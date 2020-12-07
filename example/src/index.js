@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
 import ReactDOM from 'react-dom'
-import TimezoneSelect from '../../src'
+import TimezoneSelect, { myTz } from '../../src'
 import './styles.css'
 
 const App = () => {
-  const [selectedTimezone, setSelectedTimezone] = useState({})
+  const [selectedTimezone, setSelectedTimezone] = useState(myTz());
   const [labelStyle, setLabelStyle] = useState('original')
 
   const handleLabelChange = event => {
@@ -14,7 +14,13 @@ const App = () => {
   return (
     <div className='App'>
       <div className='header'>
-        <h2>react-timezone-select</h2>
+        <h2
+          style={{
+            marginTop: '50px',
+          }}
+        >
+          Timezone Data Source from Wikipedia
+        </h2>
         <p>
           <a
             href='https://vixnguyen.medium.com/'
@@ -23,7 +29,7 @@ const App = () => {
             rel='noopener noreferrer'
             className='author'
           >
-            Vix Nguyen
+            Author: Vix Nguyen
           </a>
         </p>
       </div>
@@ -37,37 +43,6 @@ const App = () => {
         onChange={handleLabelChange}
         checked={labelStyle}
       >
-        <span>Label Style:</span>
-        <label for='original'>
-          <input
-            type='radio'
-            id='original'
-            name='labelStyle'
-            value='original'
-            checked={labelStyle === 'original'}
-          />
-          original
-        </label>
-        <label for='altName'>
-          <input
-            type='radio'
-            id='altName'
-            name='labelStyle'
-            value='altName'
-            checked={labelStyle === 'altName'}
-          />
-          altName
-        </label>
-        <label for='abbrev'>
-          <input
-            type='radio'
-            id='abbrev'
-            name='labelStyle'
-            value='abbrev'
-            checked={labelStyle === 'abbrev'}
-          />
-          abbrev
-        </label>
       </div>
       <div className='select-wrapper'>
         <TimezoneSelect
@@ -79,7 +54,6 @@ const App = () => {
       </div>
       <h3>Return Value:</h3>
       <div className='code'>
-        <span style={{ fontWeight: '500' }}>{'{'}</span> <br />
         <span style={{ marginLeft: '20px', fontWeight: '500' }}>
           Value: '{selectedTimezone.value}'
         </span>
@@ -97,10 +71,8 @@ const App = () => {
         </span>
         <br />
         <span style={{ marginLeft: '20px', fontWeight: '500' }}>
-          Included: '{selectedTimezone.included}'
+          Included: '{selectedTimezone.included ? selectedTimezone.included.join(', ') : ''}'
         </span>
-        <br />
-        {'}'}
       </div>
     </div>
   )
