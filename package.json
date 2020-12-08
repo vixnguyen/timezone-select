@@ -1,12 +1,11 @@
 {
   "name": "timezone-options-js",
-  "version": "0.0.1-alpha",
+  "version": "0.0.5-alpha",
   "description": "Timezone data source from Wikipedia",
   "main": "lib/index.js",
   "scripts": {
     "start": "npm run transpile && webpack-dev-server",
     "transpile": "babel src -d lib -s inline --copy-files",
-    "build": "webpack",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -24,9 +23,7 @@
   "homepage": "https://github.com/vixnguyen/timezone-select#readme",
   "peerDependencies": {
     "react": "^16.10.2",
-    "react-dom": "^16.10.2"
-  },
-  "dependencies": {
+    "react-dom": "^16.10.2",
     "react-select": "^3.1.0"
   },
   "devDependencies": {
