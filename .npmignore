@@ -1,4 +1,5 @@
 src
 example
 .babelrc
+crawler.js
 webpack.config.js
