@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import ReactDOM from 'react-dom'
-import TimezoneSelect, { myTz } from '../../src'
+import TimezoneSelect, { myTz } from '../../lib'
 import './styles.css'
 
 const App = () => {

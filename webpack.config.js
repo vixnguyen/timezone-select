@@ -5,10 +5,9 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 fetchTzData();
 
 module.exports = {
-  mode: 'production',
+  mode: 'development',
   entry: {
-    index: './example/src/index.js',
-    lib: './src/index.js',
+    index: './example/src/index.js'
   },
   output: {
     path: path.join(__dirname, './example/dist'),
