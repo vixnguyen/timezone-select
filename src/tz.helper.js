@@ -80,4 +80,4 @@ const getTz = () => {
   });
 };
 
-export { getTz, myTz, tzRawData, findTzByName };
+export { getTz, myTz, tzRawData, findTzByName, findTzByKey };
