@@ -1,11 +1,12 @@
-# Timezone Select
+# Timezone Select - ES Module
 
-There are exellent benifits competitive to others:
-- No datatime dependence (No Spacetime, No Moment, No Date-fns).
-- Official timezone data contributing by community (Wikipedia).
-- Easy to update timezone data.
-- Timezone grouped by country and offset, however it provide a method to get raw data (no grouping) of timezone.
-- Can use this for multiple JS libraries/framworks such as `React`, `Angular`, `VueJS` ...
+#### There are exellent benifits competitive to others:
+- No datatime dependence (neither Spacetime, Moment, Date-fns nor others).
+- Official Timezone datasource form [Wikipedia](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones).
+- Easy to update Timezone datasource with one command.
+- Timezone grouped by country and offset, however it also provides a method to get raw data of timezone (no grouping).
+- Support `Deprecated` timezones that linked to other such as `Asia/Saigon (Vietnam)`, `Asia/Chongqing (China)`, `Europe/Belfast (England)`, `Japan (Japan)`, `Singapore (Singapore)` ...
+- Can use for multiple JS libraries/framworks such as `React`, `Angular`, `VueJS` ...
 
 ## Install
 ```
@@ -14,13 +15,79 @@ npm i timezone-select-esx
 
 ## Built-in
 ### Methods
-- `clientTz`
-- `listTz`
-- `findTzByKey`
-- `findTzByName`
+- `clientTz`  
+Basically return client timezone `America/New_York`  
+If it's a deprecated timezone, return linked timezone instead, for example if client timezone is `Japan` it will return `Asia/Tokyo` instead
+- `listTz`  
+Return list of timezone that grouped by country and offset including deprecated timezone:
+```
+[
+  ...
+  {
+    value: 'America/Los_Angeles'
+    label: '(GMT-08:00) Los Angeles'
+    country: 'US'
+    offset: '-08:00'
+    included: 'America/Los_Angeles, PST8PDT, US/Pacific'
+  },
+  ...,
+  {
+    value: 'Asia/Tokyo'
+    label: '(GMT+09:00) Tokyo'
+    country: 'JP'
+    offset: '+09:00'
+    included: 'Asia/Tokyo, Japan'
+  }
+  ...
+]
+```
+- `findTzByKey`  
+Return raw timezone item
+```
+{
+  country: '',
+  name: 'Singapore',
+  status: 'Deprecated',
+  offset: '+08:00',
+  link: 'Asia/Singapore'
+}
+```
+- `findTzByName`  
+Return grouped item
+```
+{
+  value: 'Asia/Singapore'
+  label: '(GMT+08:00) Singapore'
+  country: 'SG'
+  offset: '+08:00'
+  included: 'Asia/Singapore, Singapore'
+}
+```
 
 ### Properties
-- `tzRawData`
+- `tzRawData`  
+Return raw data source, anyone can use this data for different usage
+```
+[
+  ...
+  {
+    country: 'US',
+    name: 'America/Los_Angeles',
+    status: 'Canonical',
+    offset: '−08:00',
+    link: ''
+  },
+  ...,
+  {
+    country: ',
+    name: 'Japan',
+    status: 'Deprecated',
+    offset: '+09:00',
+    link: 'Asia/Tokyo'
+  }
+  ...
+]
+```
 ### Components (React only)
 - `TimezoneSelect`
 
