@@ -1,12 +1,12 @@
 # Timezone Select - ES Module
 
 #### There are excellent benefits competitive to others:
+- Can use for multiple JS libraries/framworks such as `React`, `Angular`, `VueJS` ...
 - No datatime dependence (neither Spacetime, Moment, Date-fns nor others).
 - Official Timezone datasource form [Wikipedia](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones).
 - Easy to update Timezone datasource with one command.
 - Timezone grouped by country and offset, however it also provides a method to get raw data of timezone (no grouping).
 - Support `Deprecated` timezones that linked to other such as `Asia/Saigon (Vietnam)`, `Asia/Chongqing (China)`, `Europe/Belfast (England)`, `Japan (Japan)`, `Singapore (Singapore)` ...
-- Can use for multiple JS libraries/framworks such as `React`, `Angular`, `VueJS` ...
 
 ## Install
 ```
@@ -88,7 +88,7 @@ Return raw data source, anyone can use this data for different usage
 
 ### Components (React only)
 ##### `TimezoneSelect`
-Look at example of usage below :down:
+Look at the example of usage below
 
 ## Usage 
 ### React
