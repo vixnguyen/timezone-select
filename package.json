@@ -1,7 +1,7 @@
 {
-  "name": "timezone-options-js",
-  "version": "0.0.17-alpha",
-  "description": "Timezone data source from Wikipedia",
+  "name": "timezone-select-esx",
+  "version": "1.0.0",
+  "description": "Timezone data source from Wikipedia, without datetime dependences",
   "main": "lib/index.js",
   "files": [
     "lib",
@@ -9,9 +9,11 @@
   ],
   "scripts": {
     "clean": "rimraf lib",
-    "start": "npm run build && webpack-dev-server",
-    "build": "babel src -d lib --copy-files",
-    "prepublish": "npm run clean && npm run build",
+    "start": "npm run copy && webpack-dev-server --mode development",
+    "build": "npm run copy && webpack --mode production",
+    "copy": "babel src -d lib --copy-files",
+    "deploy": "npm run build && gh-pages -d example/dist",
+    "prepublish": "npm run clean && npm run copy",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -21,7 +23,9 @@
   "keywords": [
     "timezone",
     "list",
-    "official"
+    "official",
+    "lightweight",
+    "up-to-date"
   ],
   "bugs": {
     "url": "https://github.com/vixnguyen/timezone-select/issues"
@@ -60,6 +64,6 @@
     "jsxSingleQuote": true,
     "arrowParens": "avoid"
   },
-  "author": "Vix Nguyen",
+  "author": "Vix Nguyen <vinguyen.fitsgu@gmail.com>",
   "license": "ISC"
 }
