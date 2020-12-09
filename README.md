@@ -15,10 +15,10 @@ npm i timezone-select-esx
 
 ## Built-in
 ### Methods
-- `clientTz`  
+#### `clientTz`  
 Basically, return client timezone `America/New_York`  
 If it's a deprecated timezone, return linked timezone instead, for example if client timezone is `Japan` it will return `Asia/Tokyo`.
-- `findTzByKey`  
+#### `findTzByKey`  
 Return raw timezone item
 ```
 {
@@ -29,7 +29,7 @@ Return raw timezone item
   link: 'Asia/Singapore'
 }
 ```
-- `findTzByName`  
+#### `findTzByName`  
 Return grouped item
 ```
 {
@@ -40,7 +40,7 @@ Return grouped item
   included: 'Asia/Singapore, Singapore'
 }
 ```
-- `listTz`  
+#### `listTz`  
 Return list of timezone that grouped by country and offset including deprecated timezone:
 ```
 [
@@ -64,7 +64,7 @@ Return list of timezone that grouped by country and offset including deprecated 
 ]
 ```
 ### Properties
-- `tzRawData`  
+#### `tzRawData`  
 Return raw data source, anyone can use this data for different usage
 ```
 [
@@ -89,7 +89,8 @@ Return raw data source, anyone can use this data for different usage
 ```
 
 ### Components (React only)
-- `TimezoneSelect`
+#### `TimezoneSelect`
+Look at example of usage below :down:
 
 ## Usage 
 ### React
