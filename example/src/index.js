@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
 import ReactDOM from 'react-dom'
-import TimezoneSelect, { myTz } from '../../lib'
+import { TimezoneSelect, clientTz } from '../../lib'
 import './styles.css'
 
 const App = () => {
-  const [selectedTimezone, setSelectedTimezone] = useState(myTz());
+  const [selectedTimezone, setSelectedTimezone] = useState(clientTz());
   const [labelStyle, setLabelStyle] = useState('original')
 
   const handleLabelChange = event => {

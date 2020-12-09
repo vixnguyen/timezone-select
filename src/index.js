@@ -1,7 +1,7 @@
 
 import React, { useMemo } from 'react';
 import Select from 'react-select';
-import { getTz, myTz, findTzByName, tzRawData, findTzByKey } from './tz.helper';
+import { listTz, clientTz, findTzByName, tzRawData, findTzByKey } from './tz.helper';
 
 const TimezoneSelect = ({
   value,
@@ -12,7 +12,7 @@ const TimezoneSelect = ({
 }) => {
 
   const getOptions = useMemo(() => {
-    return getTz();
+    return listTz();
   }, [labelStyle]);
 
   const handleChange = tz => {
@@ -35,5 +35,4 @@ const TimezoneSelect = ({
   )
 }
 
-export default TimezoneSelect;
-export { myTz, getTz, tzRawData, findTzByKey };
+export { clientTz, listTz, tzRawData, findTzByKey, TimezoneSelect };

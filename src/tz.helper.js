@@ -21,7 +21,7 @@ const newTzItem = ({ data, displayName, offset }) => {
   };
 };
 
-const myTz = () => {
+const clientTz = () => {
   return Intl.DateTimeFormat().resolvedOptions().timeZone;
 };
 
@@ -46,7 +46,7 @@ const proceedDependences = (item) => {
   return { key, offset, displayName };
 };
 
-const getTz = () => {
+const listTz = () => {
   const newTz = TIMEZONES.reduce((obj, item) => {
     if (item.status === 'Deprecated') {
       if (item.link) {
@@ -80,4 +80,4 @@ const getTz = () => {
   });
 };
 
-export { getTz, myTz, tzRawData, findTzByName, findTzByKey };
+export { listTz, clientTz, tzRawData, findTzByName, findTzByKey };
