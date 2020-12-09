@@ -1,6 +1,6 @@
 # Timezone Select - ES Module
 
-#### There are exellent benifits competitive to others:
+#### There are excellent benefits competitive to others:
 - No datatime dependence (neither Spacetime, Moment, Date-fns nor others).
 - Official Timezone datasource form [Wikipedia](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones).
 - Easy to update Timezone datasource with one command.
@@ -15,12 +15,12 @@ npm i timezone-select-esx
 
 ## Built-in
 ### Methods
-#### `clientTz`  
-Basically, return client timezone `America/New_York`  
-If it's a deprecated timezone, return linked timezone instead, for example if client timezone is `Japan` it will return `Asia/Tokyo`.
-#### `findTzByKey`  
+##### `clientTz`  
+- Basically, return client timezone `America/New_York`  
+- If it's a deprecated timezone, return linked timezone instead, for example if client timezone is `Japan` it will return `Asia/Tokyo`.
+##### `findTzByKey`  
 Return raw timezone item
-```
+```js
 {
   country: '',
   name: 'Singapore',
@@ -29,9 +29,9 @@ Return raw timezone item
   link: 'Asia/Singapore'
 }
 ```
-#### `findTzByName`  
-Return grouped item
-```
+##### `findTzByName`  
+Return grouped timezone item
+```js
 {
   value: 'Asia/Singapore'
   label: '(GMT+08:00) Singapore'
@@ -40,11 +40,11 @@ Return grouped item
   included: 'Asia/Singapore, Singapore'
 }
 ```
-#### `listTz`  
+##### `listTz`  
 Return list of timezone that grouped by country and offset including deprecated timezone:
-```
+```js
 [
-  ...
+  ...,
   {
     value: 'America/Los_Angeles'
     label: '(GMT-08:00) Los Angeles'
@@ -52,23 +52,22 @@ Return list of timezone that grouped by country and offset including deprecated 
     offset: '-08:00'
     included: 'America/Los_Angeles, PST8PDT, US/Pacific'
   },
-  ...,
   {
     value: 'Asia/Tokyo'
     label: '(GMT+09:00) Tokyo'
     country: 'JP'
     offset: '+09:00'
     included: 'Asia/Tokyo, Japan'
-  }
+  },
   ...
 ]
 ```
 ### Properties
-#### `tzRawData`  
+##### `tzRawData`  
 Return raw data source, anyone can use this data for different usage
-```
+```js
 [
-  ...
+  ...,
   {
     country: 'US',
     name: 'America/Los_Angeles',
@@ -76,20 +75,19 @@ Return raw data source, anyone can use this data for different usage
     offset: '−08:00',
     link: ''
   },
-  ...,
   {
-    country: ',
+    country: '',
     name: 'Japan',
     status: 'Deprecated',
     offset: '+09:00',
     link: 'Asia/Tokyo'
-  }
+  },
   ...
 ]
 ```
 
 ### Components (React only)
-#### `TimezoneSelect`
+##### `TimezoneSelect`
 Look at example of usage below :down:
 
 ## Usage 
