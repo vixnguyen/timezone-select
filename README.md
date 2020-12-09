@@ -16,8 +16,30 @@ npm i timezone-select-esx
 ## Built-in
 ### Methods
 - `clientTz`  
-Basically return client timezone `America/New_York`  
-If it's a deprecated timezone, return linked timezone instead, for example if client timezone is `Japan` it will return `Asia/Tokyo` instead
+Basically, return client timezone `America/New_York`  
+If it's a deprecated timezone, return linked timezone instead, for example if client timezone is `Japan` it will return `Asia/Tokyo`.
+- `findTzByKey`  
+Return raw timezone item
+```
+{
+  country: '',
+  name: 'Singapore',
+  status: 'Deprecated',
+  offset: '+08:00',
+  link: 'Asia/Singapore'
+}
+```
+- `findTzByName`  
+Return grouped item
+```
+{
+  value: 'Asia/Singapore'
+  label: '(GMT+08:00) Singapore'
+  country: 'SG'
+  offset: '+08:00'
+  included: 'Asia/Singapore, Singapore'
+}
+```
 - `listTz`  
 Return list of timezone that grouped by country and offset including deprecated timezone:
 ```
@@ -41,29 +63,6 @@ Return list of timezone that grouped by country and offset including deprecated 
   ...
 ]
 ```
-- `findTzByKey`  
-Return raw timezone item
-```
-{
-  country: '',
-  name: 'Singapore',
-  status: 'Deprecated',
-  offset: '+08:00',
-  link: 'Asia/Singapore'
-}
-```
-- `findTzByName`  
-Return grouped item
-```
-{
-  value: 'Asia/Singapore'
-  label: '(GMT+08:00) Singapore'
-  country: 'SG'
-  offset: '+08:00'
-  included: 'Asia/Singapore, Singapore'
-}
-```
-
 ### Properties
 - `tzRawData`  
 Return raw data source, anyone can use this data for different usage
@@ -88,6 +87,7 @@ Return raw data source, anyone can use this data for different usage
   ...
 ]
 ```
+
 ### Components (React only)
 - `TimezoneSelect`
 
