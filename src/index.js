@@ -20,8 +20,7 @@ const TimezoneSelect = ({
   };
 
   const constructTz = (data) => {
-    const tz = typeof data === 'string' ? findTzByName(data, getOptions) : data;
-    return tz;
+    return typeof data === 'string' ? findTzByName(data, getOptions) : data;
   };
 
   return (
@@ -35,4 +34,4 @@ const TimezoneSelect = ({
   )
 }
 
-export { clientTz, listTz, tzRawData, findTzByKey, TimezoneSelect };
+export { clientTz, listTz, tzRawData, findTzByKey, findTzByName, TimezoneSelect };

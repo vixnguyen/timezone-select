@@ -7,7 +7,8 @@ const findTzByKey = (key) => {
 };
 
 const findTzByName = (name, list) => {
-  return list.find(item => item.included && item.included.includes(name));
+  const data = list || listTz();
+  return data.find(item => item.included && item.included.includes(name));
 }
 
 const newTzItem = ({ data, displayName, offset }) => {
@@ -22,7 +23,9 @@ const newTzItem = ({ data, displayName, offset }) => {
 };
 
 const clientTz = () => {
-  return Intl.DateTimeFormat().resolvedOptions().timeZone;
+  const clientTz = Intl.DateTimeFormat().resolvedOptions().timeZone;
+  const clientTzObj = findTzByKey(clientTz);
+  return clientTzObj.status === 'Deprecated' ? clientTzObj.link : clientTz;
 };
 
 const proceedDependences = (item) => {

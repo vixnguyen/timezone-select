@@ -1,10 +1,11 @@
 # Timezone Select
 
-There are exellent benifits competitive to others
-- No dependence
-- Official timezone data contributing by community (Wikipedia)
-- Easy to update timezone data
-- Can use this for other JS libraries/framworks
+There are exellent benifits competitive to others:
+- No datatime dependence (No Spacetime, No Moment, No Date-fns).
+- Official timezone data contributing by community (Wikipedia).
+- Easy to update timezone data.
+- Timezone grouped by country and offset, however it provide a method to get raw data (no grouping) of timezone.
+- Can use this for multiple JS libraries/framworks such as `React`, `Angular`, `VueJS` ...
 
 ## Install
 ```
@@ -16,6 +17,8 @@ npm i timezone-select-esx
 - `clientTz`
 - `listTz`
 - `findTzByKey`
+- `findTzByName`
+
 ### Properties
 - `tzRawData`
 ### Components (React only)
@@ -50,14 +53,14 @@ ReactDOM.render(<App />, rootElement)
 ```
 ### Angular
 ```ts
-import { listTz, clientTz } from 'timezone-select-esx';
+import { listTz, clientTz, findTzByName } from 'timezone-select-esx';
 import {NgSelectModule, NgOption} from '@ng-select/ng-select';
 
 @Component({...})
 export class ExampleComponent {
 
-  selectedTimezone: clientTz();
   timezones = listTz();
+  selectedTimezone = clientTz();
 
 }
 ```
@@ -74,3 +77,7 @@ export class ExampleComponent {
            [(ngModel)]="selectedTimezone">
 </ng-select>
 ```
+## Contributing
+
+Pull requests are always welcome!
+
