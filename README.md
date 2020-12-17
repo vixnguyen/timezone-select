@@ -12,7 +12,7 @@
 
 ## Install
 ```
-npm i timezone-select-esx
+npm i timezone-select-js
 ```
 
 ## Built-in
@@ -97,7 +97,7 @@ Look at the example of usage below
 ```jsx
 import React, { useState } from 'react';
 import ReactDOM from 'react-dom';
-import { TimezoneSelect, clientTz } from 'timezone-select-esx';
+import { TimezoneSelect, clientTz } from 'timezone-select-js';
 
 const App = () => {
   const [selectedTimezone, setSelectedTimezone] = useState(clientTz());
@@ -121,7 +121,7 @@ ReactDOM.render(<App />, rootElement)
 ```
 ### Angular
 ```ts
-import { listTz, clientTz, findTzByName } from 'timezone-select-esx';
+import { listTz, clientTz, findTzByName } from 'timezone-select-js';
 import {NgSelectModule, NgOption} from '@ng-select/ng-select';
 
 @Component({...})
