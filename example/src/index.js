@@ -23,6 +23,17 @@ const App = () => {
         </h2>
         <p>
           <a
+            href='https://www.npmjs.com/package/timezone-select-js'
+            alt='Timezone Select - JS module'
+            target='_blank'
+            rel='noopener noreferrer'
+            className='author'
+          >
+            Package: timezone-select-js
+          </a>
+        </p>
+        <p>
+          <a
             href='https://vixnguyen.medium.com/'
             alt='Vix Nguyen on Medium'
             target='_blank'

@@ -1,5 +1,5 @@
 {
-  "name": "timezone-select-esx",
+  "name": "timezone-select-js",
   "version": "1.0.0",
   "description": "Timezone data source from Wikipedia, without datetime dependences",
   "main": "lib/index.js",
