@@ -1,9 +1,9 @@
-# Timezone Select - ES Module
+# Timezone Select JS
 
 [Demo here](https://vixnguyen.github.io/timezone-select)
 
 #### There are excellent benefits competitive to others:
-- Can use for multiple JS libraries/framworks such as `React`, `Angular`, `VueJS` ...
+- Support almost popular JS libraries/frameworks such as `React`, `Angular`, `VueJS` ...
 - No datatime dependence (neither Spacetime, Moment, Date-fns nor others).
 - Official Timezone datasource form [Wikipedia](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones).
 - Easy to update Timezone datasource with one command.
