@@ -19,12 +19,23 @@ const App = () => {
             marginTop: '50px',
           }}
         >
-          Timezone Data Source from Wikipedia
+          Timezone Select JS
         </h2>
         <p>
           <a
+            href='https://en.wikipedia.org/wiki/List_of_tz_database_time_zones'
+            alt='Datasource'
+            target='_blank'
+            rel='noopener noreferrer'
+            className='author'
+          >
+            Datasource: Wikipedia
+          </a>
+        </p>
+        <p>
+          <a
             href='https://www.npmjs.com/package/timezone-select-js'
-            alt='Timezone Select - JS module'
+            alt='Timezone Select JS'
             target='_blank'
             rel='noopener noreferrer'
             className='author'
