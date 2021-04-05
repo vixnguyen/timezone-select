@@ -1,7 +1,7 @@
 {
   "name": "timezone-select-js",
-  "version": "1.0.2",
-  "description": "Timezone Select JS - data source from Wikipedia - no datetime dependences",
+  "version": "1.0.3",
+  "description": "Timezone Select JS - Datasource from Wikipedia - no DateTime dependences",
   "main": "lib/index.js",
   "files": [
     "lib",
