@@ -4,11 +4,11 @@
 
 #### There are excellent benefits competitive to others:
 - Support almost popular JS libraries/frameworks such as `React`, `Angular`, `VueJS` ...
-- No datatime dependence (neither Spacetime, Moment, Date-fns nor others).
-- Official Timezone datasource form [Wikipedia](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones).
-- Easy to update Timezone datasource with one command.
-- Timezone grouped by country and offset, however it also provides a method to get raw data of timezone (no grouping).
-- Support `Deprecated` timezones that linked to other such as `Asia/Saigon (Vietnam)`, `Asia/Chongqing (China)`, `Europe/Belfast (England)`, `Japan (Japan)`, `Singapore (Singapore)` ...
+- No DateTime dependence (neither Spacetime, Moment, Date-fns nor others).
+- Official Timezone Datasource from [Wikipedia](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones).
+- Easy to update Timezone Datasource with one command.
+- Timezone grouped by country and offset, however, it also provides a method to get raw data of timezone (no grouping).
+- Support `Deprecated` timezones that linked to other, such as `Asia/Saigon (Vietnam)`, `Asia/Chongqing (China)`, `Europe/Belfast (England)`, `Japan (Japan)`, `Singapore (Singapore)` ...
 
 ## Install
 ```
