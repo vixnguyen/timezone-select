@@ -121,7 +121,7 @@ ReactDOM.render(<App />, rootElement)
 ```
 ### Angular
 ```ts
-import { listTz, clientTz, findTzByName } from 'timezone-select-js';
+import { listTz, clientTz } from 'timezone-select-js';
 import {NgSelectModule, NgOption} from '@ng-select/ng-select';
 
 @Component({...})
@@ -144,6 +144,25 @@ export class ExampleComponent {
            bindValue="value" 
            [(ngModel)]="selectedTimezone">
 </ng-select>
+```
+
+### VueJS
+```js
+import { listTz, clientTz } from 'timezone-select-js';
+
+new Vue({
+  el: '...',
+  template: '...',
+  data: {
+    selected: clientTz(),
+    timezones: listTz();
+  }
+})
+```
+```html
+<select v-model="selected">
+  <option v-for="tz in timezones" :selected="selected === tz.value" v-bind:value="tz.value">{{ tz.label }}</option>
+</select>
 ```
 ## Contributing
 
