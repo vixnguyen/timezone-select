@@ -1,6 +1,6 @@
 {
   "name": "timezone-select-js",
-  "version": "1.0.3",
+  "version": "2.0.0",
   "description": "Timezone Select JS - Datasource from Wikipedia - no DateTime dependences",
   "main": "lib/index.js",
   "files": [
@@ -34,13 +34,6 @@
     "url": "https://github.com/vixnguyen/timezone-select/issues"
   },
   "homepage": "https://github.com/vixnguyen/timezone-select#readme",
-  "peerDependencies": {
-    "react": "^16.10.2",
-    "react-dom": "^16.10.2"
-  },
-  "dependencies": {
-    "react-select": "^3.1.0"
-  },
   "devDependencies": {
     "@babel/cli": "^7.10.5",
     "@babel/core": "^7.11.0",
