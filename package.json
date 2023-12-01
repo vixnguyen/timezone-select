@@ -2,17 +2,15 @@
   "name": "timezone-select-js",
   "version": "2.0.0",
   "description": "Timezone Select JS - Datasource from Wikipedia - no DateTime dependences",
-  "main": "lib/index.js",
+  "main": "crawler.js",
   "files": [
     "lib",
     "README.md"
   ],
   "scripts": {
     "clean": "rimraf lib",
-    "start": "npm run copy && webpack-dev-server --mode development",
-    "build": "npm run copy && webpack --mode production",
+    "update": "node crawler.js",
     "copy": "babel src -d lib --copy-files",
-    "deploy": "npm run build && gh-pages -d example/dist",
     "prepublish": "npm run clean && npm run copy",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
