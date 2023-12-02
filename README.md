@@ -95,13 +95,43 @@ Look at the example of usage below
 ## Usage 
 ### React
 ```jsx
-import React, { useState } from 'react';
-import ReactDOM from 'react-dom';
-import { TimezoneSelect, clientTz } from 'timezone-select-js';
+import { listTz, clientTz, findTzByName } from 'timezone-select-js';
+import React, { useMemo } from 'react';
+import Select from 'react-select';
+
+const TimezoneSelect = ({
+  value,
+  onBlur,
+  onChange,
+  labelStyle = 'original',
+  ...props
+}) => {
+
+  const getOptions = useMemo(() => {
+    return listTz();
+  }, [labelStyle]);
+
+  const handleChange = tz => {
+    onChange && onChange(tz);
+  };
+
+  const constructTz = (data) => {
+    return typeof data === 'string' ? findTzByName(data, getOptions) : data;
+  };
+
+  return (
+    <Select
+      value={constructTz(value)}
+      onChange={handleChange}
+      options={getOptions}
+      onBlur={onBlur}
+      {...props}
+    />
+  )
+}
 
 const App = () => {
   const [selectedTimezone, setSelectedTimezone] = useState(clientTz());
-
   return (
     <div className='app'>
       <h2>Timezone Select</h2>
@@ -114,7 +144,7 @@ const App = () => {
       </div>
     </div>
   )
-};
+}
 
 const rootElement = document.getElementById('root')
 ReactDOM.render(<App />, rootElement)

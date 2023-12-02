@@ -34,7 +34,19 @@ const fetchTzData = () => {
           }
         }
         if (dataSources.length) {
-          fs.createWriteStream(DATA_OUTPUT).write(`export const TIMEZONES = ${JSON.stringify(dataSources)};`, { encoding : 'utf-8'});
+          var writeStream = fs.createWriteStream(DATA_OUTPUT);
+
+          writeStream.write(`export const TIMEZONES = ${JSON.stringify(dataSources)};`,'UTF8');
+
+          writeStream.end();
+
+          writeStream.on('finish',function(){
+            console.log("finished");
+          });
+
+          writeStream.on('error',function(err){
+            console.log(err.stack);
+          });
         }
       }
       done();
@@ -45,4 +57,4 @@ const fetchTzData = () => {
   c.queue(DATA_SOURCE);
 }
 
-module.exports = fetchTzData;
+fetchTzData();
