@@ -1,5 +1,5 @@
 const DATA_SOURCE = 'https://en.wikipedia.org/wiki/List_of_tz_database_time_zones';
-const DATA_FIELDS = ['country', '', 'name', '', 'status', 'offset', '', 'link'];
+const DATA_FIELDS = ['country', 'name', '', 'status', 'offset', '', '','', '', 'link'];
 const DATA_OUTPUT = './src/tz.data.js';
 
 const Crawler = require('crawler');
@@ -22,12 +22,19 @@ const fetchTzData = () => {
           $cells = $row.children.filter(item => item.name === 'td');
           // init record for each row
           if ($cells.length) {
+            // #comment1 handle Timezone abbreviation particularly
+            if ($cells.length === 9) {
+              // handle case abbreviation only has SDT value
+              $cells.splice(7, 0, '');
+            }
+            // end of #comment1
             record = {};
             for (let ind in $cells) {
               $cell = $cells[ind];
               if ($cell && $cell.children && DATA_FIELDS[ind]) {
                 $dataCell = $cell.children.find(item => item.name === 'a') || $cell;
                 record[DATA_FIELDS[ind]] = $dataCell.children[0].data.replace('\n', '');
+                
               }
             }
             dataSources.push(record);
